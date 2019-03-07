@@ -1,0 +1,18 @@
+Analysis of Deviance Table
+
+Model 1: resp ~ varb + fit:(as.factor(Block) + EarliestGerm + EarliestFlowPod)
+Model 2: resp ~ varb + fit:(as.factor(Block) + Year + EarliestGerm + EarliestFlowPod)
+  Model Df Model Dev Df Deviance P(>|Chi|)    
+1       17   -3477.0                          
+2       18   -3442.5  1   34.425 4.431e-09 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Analysis of Deviance Table
+
+Model 1: resp ~ varb + fit:(as.factor(Block) + EarliestGerm + EarliestFlowPod)
+Model 2: c("resp ~ varb + fit:(as.factor(Block) + Generation + EarliestGerm + ", "    EarliestFlowPod)")
+  Model Df Model Dev Df Deviance P(>|Chi|)    
+1       17   -3477.0                          
+2       18   -3442.5  1   34.425 4.431e-09 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

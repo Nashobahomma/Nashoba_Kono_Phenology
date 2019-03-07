@@ -1,0 +1,33 @@
+\documentclass[10pt]{standalone} %I would also do macros and LaTeX packages here (preamble)
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[LGRgreek]{mathastext}
+\usepackage{fixltx2e}
+\usepackage{tabularx}
+
+\begin{document}
+
+\begin{tabular}{@{\extracolsep{1pt}}l r r r r} %left  right right also c for center
+\toprule
+& \multicolumn{2}{c}{Alpha Group}						  & \multicolumn{1}{c}{Beta Group} 	\\
+				\cmidrule(lr){2-3} \cmidrule(lr){4-4}
+
+ 										& G$_1$Y$_{13}$ 		& G$_2$Y$_{14}$ 		& G$_1$Y$_{14}$ \\ 
+ \midrule
+\multicolumn{1}{l}{Pop Mean GDD} 		& 1248.7 (146.9)					& 1027.9 (198.3)					& 961.8 (182.8)			\\ [5pt]
+\multicolumn{1}{l}{ Mean Mat GDD}		& 1264.9 (117.7)					& 1022.9 (162.2)					& 960.9 (186.8)			\\ [5pt]
+% \multicolumn{1}{l}{Mean Pat GDD}		& 1269.0 (106.9)					& ---					& 970.9 (185.3)			\\ [5pt]
+\multicolumn{1}{l}{Pop Mean DTF}		& 79.3 (9.4)					& 61.4 (12.7)					& 56.6 (11.8)			\\ [5pt]
+\multicolumn{1}{l}{ Mean Mat DTF}		& 79.8 (7.0)					& 61.2 (10.6)					& 56.4 (11.9)			\\ [5pt]
+ % \multicolumn{1}{l}{Mean Pat DTF}		& 80.0 (6.3)					& ---					& 58.0 (11.8)			\\ [5pt]
+\bottomrule
+\end{tabular}
+\end{document}
+
+   
+  %  we want to do overall mean and standard deviation
+  		% resuse code for ch2 initital and total numseed by fam
+  %  and maternal family mean and standard deviation
+  %  G1Y14 and G2Y14 compare - mean and sd of GDD to EFP  

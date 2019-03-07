@@ -1,0 +1,24 @@
+
+Call:
+aster.formula(formula = resp ~ varb + fit:(as.factor(Block) + 
+    EarliestGerm + EarliestFlowPod), pred = pred, fam = fam, 
+    varvar = varb, idvar = id, root = Initial, data = g1y13_long_data)
+
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)           -0.546953   0.081735  -6.692 2.20e-11 ***
+varbNumPods            2.776449   0.084787  32.746  < 2e-16 ***
+varbNumSeeds           4.314960   0.415346  10.389  < 2e-16 ***
+varbPods              -6.165491   0.211435 -29.160  < 2e-16 ***
+fit:as.factor(Block)1  0.035068   0.029486   1.189  0.23431    
+fit:as.factor(Block)2 -0.046238   0.032737  -1.412  0.15783    
+fit:as.factor(Block)3 -0.107197   0.037549  -2.855  0.00431 ** 
+fit:as.factor(Block)4 -0.054472   0.038232  -1.425  0.15423    
+fit:as.factor(Block)5  0.106953   0.031480   3.397  0.00068 ***
+fit:as.factor(Block)6  0.156899   0.032248   4.865 1.14e-06 ***
+fit:EarliestGerm      -0.006626   0.002748  -2.411  0.01589 *  
+fit:EarliestFlowPod   -0.014417   0.001301 -11.080  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Original predictor variables dropped (aliased)
+     fit:as.factor(Block)7 

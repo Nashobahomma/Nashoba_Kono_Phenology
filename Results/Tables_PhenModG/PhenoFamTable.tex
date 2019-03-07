@@ -1,0 +1,40 @@
+\documentclass[10pt]{standalone} %I would also do macros and LaTeX packages here (preamble)
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage[LGRgreek]{mathastext}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+\begin{document}
+
+
+
+\begin{tabular}{@{\extracolsep{1pt}}l r r r} 
+
+\toprule  
+ 			& \multicolumn{2}{c}{Alpha Group}						  & \multicolumn{1}{c}{Beta Group} 	\\
+				\cmidrule(lr){2-3} \cmidrule(lr){4-4}
+
+ 							   						& G$_1$Y$_{13}$   & G$_2$Y$_{14}$& G$_1$Y$_{14}$	   \\
+\midrule
+\multicolumn{1}{l}{Number of Paternal Families}    	& 77       		 & ---     		& 138     		  	\\[5 pt]
+
+\multicolumn{1}{l}{Number of Maternal Families}	    & 111      		 & 63      		& 121				\\[5 pt]
+
+\multicolumn{1}{l}{Mean Dams Per Sire}	            & 2.05     		 & ---     		& 3.08    			\\[5 pt]
+
+\multicolumn{1}{l}{Mean Seeds Planted Per Dam}	    & 20.54    		 & 37.21   		& 42.92   		 	\\[5 pt] 
+
+\multicolumn{1}{l}{Mean Seeds Planted Per Sire}    	& 29.61     	 & ---     		& 37.63			    \\[5 pt]
+
+
+\bottomrule
+\end{tabular}
+\end{document}
+% Maybe not put this number in table since it only reflects the ...star: sum of all initial is 2370, sum of all pedigreed is 2280.
+
+%the G1Y13 values are combined from NES and FAC
+%Revisions 27 April 2017 with file: Ch3_MethodsTableRevisions.r ...with rows having 5 'garbage' IDs, removed.
+% Add per block information to text or to supplmental table Ch3_MethodsTables_Supplemental.tex" 
+
+

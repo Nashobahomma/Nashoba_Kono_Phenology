@@ -1,0 +1,18 @@
+Analysis of Variance Table
+
+Model 1: EarliestFlowPod ~ Block
+Model 2: EarliestFlowPod ~ Block + Year
+  Res.Df   RSS Df Sum of Sq      F  Pr(>F)  
+1    440 33504                              
+2    439 33293  1     210.2 2.7716 0.09666 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Analysis of Variance Table
+
+Model 1: EarliestFlowPod ~ Block
+Model 2: EarliestFlowPod ~ Block + Generation
+  Res.Df   RSS Df Sum of Sq      F  Pr(>F)  
+1    440 33504                              
+2    439 33293  1     210.2 2.7716 0.09666 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

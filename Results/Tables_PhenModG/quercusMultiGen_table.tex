@@ -1,0 +1,40 @@
+\documentclass[10pt]{standalone} 
+\usepackage{booktabs}
+%\usepackage{amsmath}
+\usepackage{amssymb} %maths
+\usepackage{fixltx2e}
+%\usepackage[LGRgreek]{mathastext}
+
+
+\begin{document}
+
+\begin{tabular}{l r r r} 
+\toprule
+ 		& EG		&		& EF  		\\
+\midrule
+%%%%%%%%%Possibly add G2 estimates for V_E and possibly Wbar as well%%%%%%%%%%%
+$V_A$  		& 3.84		& 		& 15.71		\\[5pt]
+$V_E$		& 121.9	  	& 		& 75.24		\\[5pt]	
+$h^2$		& 0.030		&		& 0.173		\\[5pt]
+%$Cov_A$		& 		& 10.58		&		\\[5pt]
+%$Cov_E$		&		& 38.18		&		\\[5pt]
+$Cor_A$			&		& 1.36		&		\\[5pt]
+$Cor_E$			&		& 0.40		&		\\[5pt]
+
+\bottomrule
+\end{tabular}
+
+\end{document}
+
+% The values come from Multigenerational Quercus date collected by A.Nashoba, analyzed by T.Kono & A.Nashoba, and run by F.Shaw 
+% Source files: FS_Multigen_sibships, mf3mg.p
+% Output file: FS_Multigen_Results
+% Analyzing environmental and additive genetic variance for combined G1Y13 and G1y14
+
+% EG: Va+VP = full numbers not truncated..3.834964+121.912263=125.747227, h2=3.834964/125.747227=0.030497404
+% EF: Va+Vp = 15.706558+75.238494=90.945052,                              h2=15.706558/90.945052=0.172703821
+
+% Now need to calculate Environmental and Additive Genetic Correlations:
+%cov / sqrtEG * sqrtEF
+%10.58/ sqrt(3.84)*sqrt(15.71) = corA = 1.36
+%38.18/ sqrt(121.9)*sqrt(75.24) = corE = 0.40

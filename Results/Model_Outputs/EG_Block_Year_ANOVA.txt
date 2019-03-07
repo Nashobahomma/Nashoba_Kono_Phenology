@@ -1,0 +1,18 @@
+Analysis of Variance Table
+
+Model 1: EarliestGerm ~ Block
+Model 2: EarliestGerm ~ Block + Year
+  Res.Df   RSS Df Sum of Sq      F    Pr(>F)    
+1    440 58939                                  
+2    439 41351  1     17589 186.73 < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Analysis of Variance Table
+
+Model 1: EarliestGerm ~ Block
+Model 2: EarliestGerm ~ Block + Generation
+  Res.Df   RSS Df Sum of Sq      F    Pr(>F)    
+1    440 58939                                  
+2    439 41351  1     17589 186.73 < 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

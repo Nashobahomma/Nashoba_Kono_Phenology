@@ -1,0 +1,39 @@
+\documentclass[10pt]{standalone}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[LGRgreek]{mathastext}
+\usepackage{fixltx2e}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+\begin{document}
+
+% This table has the Aster regression coefficients (fit:EG, fit:EF) and the
+% Lande-Arnold beta estimates.
+
+% The fit:EG and fit:EF values come from PhenMod_G.R, and can be found in the
+% text files in Model_Outputs/. These were derived from the summary() call on
+% the Aster model object.
+
+% The betas come from PhenMod_G_LA_Beta.R. They are printed to the terminal
+% while running that script. The significance of the beta estimates is tested
+% in PhenMod_G_LA-Beta_Significance_Test.R
+
+
+\begin{tabular}{@{\extracolsep{1pt}}l l l l }
+\toprule
+ 			& \multicolumn{2}{c}{Alpha Group}						  & \multicolumn{1}{c}{Beta Group} 	\\
+				\cmidrule(lr){2-3} \cmidrule(lr){4-4}
+
+       										& G$_1$Y$_{13}$ 	& G$_2$Y$_{14}$  & G$_1$Y$_{14}$   \\
+\midrule
+\multicolumn{1}{l}{$\beta_{\mathrm{EG}}$}	& -0.0124 	&  0.0062			& -0.0115			\\
+\multicolumn{1}{l}{$\beta_{\mathrm{EF}}$}	& -0.0623$^{***}$	&  -0.0900$^{**}$			& -0.0385$^{*}$ 			\\
+\midrule
+\multicolumn{1}{l}{fit: EG}					& -0.0066$^*$		&  0.0003		& -0.0003        	\\
+\multicolumn{1}{l}{fit: EF}					& -0.0144$^{***}$	& -0.0048$^{***}$ & -0.0018$^{**}$  \\ 
+%RGS: can loosely interpret as selective gradients, but are mathematically different
+\bottomrule
+\end{tabular}
+\end{document}

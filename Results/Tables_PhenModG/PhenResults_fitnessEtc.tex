@@ -1,0 +1,25 @@
+\documentclass[10pt]{standalone} %I would also do macros and LaTeX packages here (preamble)
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage[LGRgreek]{mathastext}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+% These numbers come from PhenResults_fitnessEtc_PhenModG.R
+
+\begin{document}
+\centering
+\begin{tabular}{@{\extracolsep{1pt}}l r r r r @{}}
+\toprule
+                                     & \multicolumn{2}{c}{Alpha Group} & \multicolumn{1}{c}{Beta Group} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-4}
+                                     & G$_1$Y$_{13}$  & G$_2$Y$_{14}$  & G$_1$Y$_{14}$ \\
+\midrule
+\multicolumn{1}{l}{Seeds}            & 2370            & 6842          & 5193 \\
+\multicolumn{1}{l}{Seeds Germinated} & 694 (29\%)      & 950 (14\%)    & 378 (7\%) \\
+\multicolumn{1}{l}{Seeds Produced}   & 7088 (25.3) $^\dagger$ & 6352 (157.2)   & 4207 (18.5) \\ [0.5pt]
+\midrule
+\multicolumn{1}{l}{${\bar{W}}$}      & 3.39            & 2.93          & 7.55 \\
+\bottomrule
+\end{tabular}
+\end{document}
