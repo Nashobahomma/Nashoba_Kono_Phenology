@@ -9,8 +9,8 @@
 # Output: Per-loc GDD and DTF values and distributions of GDD and DTF
 # Requires: PhenMod_G
 
-setwd("/Users/tomkono/Dropbox/GitHub/Hoshonti_Aiona")
-#setwd("/Users/amber-nashoba/Dropbox/GitHubRepositories/Hoshonti_Aiona")
+setwd("/Users/tomkono/Dropbox/GitHub/Nashoba_Kono_Phenology")
+#setwd("/Users/amber-nashoba/Dropbox/GitHubRepositories/Nashoba_Kono_Phenology")
 
 load("Results/RDA/PhenMod_G.rda")
 
@@ -25,7 +25,7 @@ load("Results/RDA/PhenMod_G.rda")
 ################################################################################
 
 # Read the daily temperatures at SCG
-temp_daily <- read.csv("Data_Files/PRISM/SCG_PRISM_Temp_Daily_MinMax.csv", header=TRUE)
+temp_daily <- read.csv("Data/SCG_PRISM_Temp_Daily_MinMax.csv", header=TRUE)
 
 #   Then, define a function that will claculate growing degree days. We use a
 #   base temperature of 10C (50F), as is done for soybean.

@@ -8,8 +8,8 @@
 # Input: PhenMod_G.rda
 # Output: Estimates of beta for EG and EF, for input into LA_pred_obs.tex
 
-setwd("/Users/tomkono/Dropbox/GitHub/Hoshonti_Aiona")
-# setwd("/Users/ambereule-nashoba/Desktop/Dropbox/GitHubRepositories/Hoshonti_Aiona")
+setwd("/Users/tomkono/Dropbox/GitHub/Nashoba_Kono_Phenology")
+# setwd("/Users/ambereule-nashoba/Desktop/Dropbox/GitHubRepositories/Nashoba_Kono_Phenology")
 library(aster)
 
 # Load the RDA file, which has the aster model objects.
@@ -44,7 +44,7 @@ g1y13_ef_cent <- g1y13_final$EarliestFlowPod - mean(g1y13_final$EarliestFlowPod)
 g1y13_ols <- lm(g1y13_relfit ~ 0 + g1y13_eg_cent + g1y13_ef_cent)
 # We can plot the diagnostics of the model to examine the residuals. Perhaps
 # this may explain why the betas are so different from the Aster model
-pdf(file="Results/PhenFigures/G1Y13_LA_Residuals.pdf", height=6, width=6)
+pdf(file="Results/Figures/G1Y13_LA_Residuals.pdf", height=6, width=6)
 plot(g1y13_ols)
 dev.off()
 
@@ -129,7 +129,7 @@ g1y14_ef_cent <- g1y14_final$EarliestFlowPod - mean(g1y14_final$EarliestFlowPod)
 g1y14_ols <- lm(g1y14_relfit ~ 0 + g1y14_eg_cent + g1y14_ef_cent)
 # We can plot the diagnostics of the model to examine the residuals. Perhaps
 # this may explain why the betas are so different from the Aster model
-pdf(file="Results/PhenFigures/G1Y14_LA_Residuals.pdf", height=6, width=6)
+pdf(file="Results/Figures/G1Y14_LA_Residuals.pdf", height=6, width=6)
 plot(g1y14_ols)
 dev.off()
 
@@ -213,7 +213,7 @@ g2y14_ef_cent <- g2y14_final$EarliestFlowPod - mean(g2y14_final$EarliestFlowPod)
 g2y14_ols <- lm(g2y14_relfit ~ 0 + g2y14_eg_cent + g2y14_ef_cent)
 # We can plot the diagnostics of the model to examine the residuals. Perhaps
 # this may explain why the betas are so different from the Aster model
-pdf(file="Results/PhenFigures/G2Y14_LA_Residuals.pdf", height=6, width=6)
+pdf(file="Results/Figures/G2Y14_LA_Residuals.pdf", height=6, width=6)
 plot(g2y14_ols)
 dev.off()
 

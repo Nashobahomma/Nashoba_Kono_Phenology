@@ -12,8 +12,8 @@ library(reshape)
 library(gtable)
 library(grid)
 
-setwd("/Users/tomkono/Dropbox/GitHub/Hoshonti_Aiona")
-# setwd("/Users/ambereule-nashoba/Desktop/Dropbox/GitHubRepositories/Hoshonti_Aiona")
+setwd("/Users/tomkono/Dropbox/GitHub/Nashoba_Kono_Phenology")
+# setwd("/Users/ambereule-nashoba/Desktop/Dropbox/GitHubRepositories/Nashoba_Kono_Phenology")
 
 #   Read the raw data files. We want to create a data frame that looks like this
 #
@@ -24,8 +24,8 @@ setwd("/Users/tomkono/Dropbox/GitHub/Hoshonti_Aiona")
 
 #   Read in the necessary data files.
 #       First read in 2013
-pat_2013 <- read.csv("Data_Files/2013/Model_Ready/2013ModelData.csv", header=TRUE)
-pat_2014 <- read.csv("Data_Files/2014/Model_ready/2014_ModelData_Ver3.csv", header=TRUE)
+pat_2013 <- read.csv("Data/G1Y13_Data.csv", header=TRUE)
+pat_2014 <- read.csv("Data/G1Y14_Data.csv", header=TRUE)
 
 #   "Slice" down the data sheets to just the variables of interest
 #   From 2013:
@@ -126,7 +126,7 @@ ef_spider <- ggplot(efp_long, aes(x=variable, y=value, group=PatL)) +
                     labels=c(expression(paste("G"[1], "Y"[13])), expression(paste("G"[1], "Y"[14]))))
 
 # Combine them into one plot, like the violins
-pdf("Results/PhenFigures/G1_PatFams_SpiderPlot.pdf", width=4, height=4)
+pdf("Results/Figures/G1_PatFams_SpiderPlot.pdf", width=4, height=4)
 eg_spider <- ggplotGrob(eg_spider)
 ef_spider <- ggplotGrob(ef_spider)
 comb_spiders <- rbind(ef_spider, eg_spider, size="first")
@@ -134,7 +134,7 @@ comb_spiders <- rbind(ef_spider, eg_spider, size="first")
 grid.draw(comb_spiders)
 dev.off()
 
-pdf("Results/PhenFigures/G1_PatFams_CombinedSpider.pdf", width=4, height=4)
+pdf("Results/Figures/G1_PatFams_CombinedSpider.pdf", width=4, height=4)
 eg_long$Var <- c("EG")
 eg_long$PatL <- paste("EG", eg_long$PatL)
 eg_long$variable <- as.character(eg_long$variable)

@@ -7,8 +7,8 @@
 # Input: PhenMod_G model objects
 # Output: Plot of mean fitness with standard error bars
 
-#setwd("~/Desktop/Dropbox/GitHubRepositories/Hoshonti_Aiona/")
-setwd("/Users/tomkono/Dropbox/GitHub/Hoshonti_Aiona")
+#setwd("~/Desktop/Dropbox/GitHubRepositories/Nashoba_Kono_Phenology/")
+setwd("/Users/tomkono/Dropbox/GitHub/Nashoba_Kono_Phenology")
 library(aster)
 load("Results/RDA/PhenMod_G.rda")
 
@@ -198,7 +198,7 @@ fit_values <- c(wbar_g1y13, wbar_g2y14, wbar_g1y14)
 fit_se <- c(se_g1y13, se_g2y14, se_g1y14)
 fit_upper_err <- fit_values + crit*fit_se
 fit_lower_err <- fit_values - crit*fit_se
-pdf(file="Results/PhenFigures/MeanFitnessWithSEBars.pdf", height=3, width=3)
+pdf(file="Results/Figures/MeanFitnessWithSEBars.pdf", height=3, width=3)
 par(mar=c(4, 4, 0.1, 0.8))
 plot(c(i, i), c(fit_upper_err, fit_lower_err), type="n", axes=FALSE, xlab="", ylab="", xlim=c(1, 3))
 segments(i, fit_upper_err, i, fit_lower_err)

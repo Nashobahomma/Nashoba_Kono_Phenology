@@ -23,8 +23,8 @@
 library(aster)
 
 # Set the working directory to be the base of the GitHub repository
-setwd("/Users/tomkono/Dropbox/GitHub/Hoshonti_Aiona")
-# setwd("/Users/ambereule-nashoba/Desktop/Dropbox/GitHubRepositories/Hoshonti_Aiona")
+setwd("/Users/tomkono/Dropbox/GitHub/Nashoba_Kono_Phenology")
+# setwd("/Users/ambereule-nashoba/Desktop/Dropbox/GitHubRepositories/Nashoba_Kono_Phenology")
 
 # Set up the graphical model. We will uset he same graphical model for each
 # cohort, so it does not need to change.
@@ -36,49 +36,12 @@ fam <- c(1, 1, 3, 2)
 
 ##### G1Y13 #####
 # Read in the G1Y13 data.
-g1y13_wide_data <- read.csv("Data_Files/2013/Model_Ready/2013ModelData.csv", header=TRUE)
-
-# Next we want to adjust the G1Y13 NumSeeds values to match the G2Y14 number
-# planted. These values come from the "MasterA" data sheet for G2Y14
-g2y14_masterA <- read.csv("Data_Files/2013'/Raw/scg2013'MasterA_March5.csv", header=TRUE)
-
-# The strategy we will take is to merge the G1Y13 and G2Y14 data frames, keeping
-# all Locs. Then, we will check each Loc and update the NumSeeds value as
-# necessary.
-g1y13_g2y14 <- merge(
-    x=g1y13_wide_data, y=g2y14_masterA,
-    by.x="Loc", by.y="Loc2013p",
-    all.x=TRUE)
-
-# Define a function that returns the corrected value of NumSeeds for G1Y13
-correctNumSeeds <- function(data_row) {
-    raw_NumSeeds <- data_row["NumSeeds"]
-    num_planted <- data_row["seedsplanted"]
-    # If the number planted is NA, then we cannot do any more checking, and we
-    # just return the number of seeds produced by G1Y13
-    if(is.na(num_planted)) {
-        return(raw_NumSeeds)
-    } else if(raw_NumSeeds >= num_planted) {
-        return(raw_NumSeeds)
-    } else if(raw_NumSeeds < num_planted) {
-        return(num_planted)
-    } else {
-        return(NA)
-    }
-}
-
-# Apply the correction function across the merged data frames, save it into
-# a new column called NumSeeds_Corrected
-g1y13_g2y14$NumSeeds_Corrected <- as.numeric(apply(g1y13_g2y14, 1, correctNumSeeds))
+g1y13_wide_data <- read.csv("Data/G1Y13_Data.csv", header=TRUE)
 
 # Now, trim down the datasheet to just the columns needed for the Aster model.
-g1y13_trimmed <- g1y13_g2y14[,c("Loc", "ID", "Pat", "Mat", "Block", "Initial",
-                                "Germ", "Pods", "NumPods", "NumSeeds_Corrected",
-                                "EarliestGerm", "EarliestFlowPod", "CrossType")]
-# And then replace "NumSeeds_Corrected" with just "NumSeeds"
-names(g1y13_trimmed) <- c("Loc", "ID", "Pat", "Mat", "Block", "Initial",
+g1y13_trimmed <- g1y13_wide_data[,c("Loc", "ID", "Pat", "Mat", "Block", "Initial",
                                 "Germ", "Pods", "NumPods", "NumSeeds",
-                                "EarliestGerm", "EarliestFlowPod", "CrossType")
+                                "EarliestGerm", "EarliestFlowPod", "CrossType")]
 
 # Note here: 2.1.11 has a problem where 5 seeds were planted in 2014, but there
 # were no seeds collected in 2013. A note in the 2014 MasterA sheet says that
@@ -91,14 +54,6 @@ g1y13_trimmed$NumSeeds[g1y13_trimmed$Loc == "2.2.1"] <- g1y13_trimmed$NumSeeds[g
 # does not have any data beyond seeds planted, so it is likely a mis-entry from
 # a different cohort.
 g1y13_trimmed$NumSeeds[g1y13_trimmed$Loc == "2.2.3"] <- 0
-
-# Save the trimmed G1Y13 data frame for other analyses (FTNS, etc).
-write.csv(
-    g1y13_trimmed,
-    file="Data_Files/2013/Model_Ready/Correct_G1Y13_NumSeeds.csv",
-    quote=FALSE,
-    row.names=FALSE)
-
 # One last QC step: keep only rows that have no NAs in EG and EF so that we
 # can fit an Aster model with predictors
 keep <- !is.na(g1y13_trimmed$EarliestGerm) & !is.na(g1y13_trimmed$EarliestFlowPod)
@@ -129,7 +84,7 @@ sink()
 
 ##### G1Y14 #####
 # Read in the G1Y14 data
-g1y14_wide_data <- read.csv("Data_Files/2014/Model_Ready/2014_ModelData_Ver3.csv",header=TRUE)
+g1y14_wide_data <- read.csv("Data/G1Y14_Data.csv",header=TRUE)
 # Trim it down, just like the G1Y13 data
 g1y14_trimmed <- g1y14_wide_data[, c("Loc", "Block", "Initial", "Germ", "Pods",
                                   "Mat", "MatL", "MatDam", "MatSire", "Pat",
@@ -162,7 +117,7 @@ sink()
 
 ##### G2Y14 #####
 # Read the G2Y14 data
-g2y14_wide_data <- read.csv("Data_Files/2013'/Model_Ready/2013PrimeModelData_NonBinned_Phen.csv",header=TRUE)
+g2y14_wide_data <- read.csv("Data/G2Y14_Data.csv",header=TRUE)
 
 # Trim columns for the model
 g2y14_trimmed <- g2y14_wide_data[, c("Loc2013p", "Block", "Initial", "Germ",

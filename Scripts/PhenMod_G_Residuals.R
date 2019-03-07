@@ -11,8 +11,8 @@
 library(aster)
 
 # Set the working directory to be the root of the GitHub repository
-setwd("/Users/tomkono/Dropbox/GitHub/Hoshonti_Aiona")
-# setwd("/Users/ambereule-nashoba/Desktop/Dropbox/GitHubRepositories/Hoshonti_Aiona")
+setwd("/Users/tomkono/Dropbox/GitHub/Nashoba_Kono_Phenology")
+# setwd("/Users/ambereule-nashoba/Desktop/Dropbox/GitHubRepositories/Nashoba_Kono_Phenology")
 
 # Read in PhenMod_G.rda
 load("Results/RDA/PhenMod_G.rda")
@@ -83,7 +83,7 @@ all.equal(g1y13_woof_xi, g1y13_wgrad)
 g1y13_pearson <- (g1y13_woof - g1y13_woof_xi)/sqrt(g1y13_winfo)
 
 # Make the plot and save it to the proper place
-pdf(file="Results/PhenFigures/G1Y13_Pearson_Residuals.pdf", height=6, width=6)
+pdf(file="Results/Figures/G1Y13_Pearson_Residuals.pdf", height=6, width=6)
 plot(
     g1y13_pearson~g1y13_woof_xi,
     xlab="Fitted Values",
@@ -91,7 +91,7 @@ plot(
     main="G1Y13 Residuals")
 abline(h=0, lty=2, lwd=2)
 dev.off()
-pdf(file="Results/PhenFigures/G1Y13_Pearson_Residuals_Hist.pdf", height=6, width=6)
+pdf(file="Results/Figures/G1Y13_Pearson_Residuals_Hist.pdf", height=6, width=6)
 hist(g1y13_pearson,
     xlab="Pearson Residuals",
     main="G1Y13 Residuals",
@@ -162,7 +162,7 @@ for(i in 1:g1y14_nwoof) {
 }
 all.equal(g1y14_woof_xi, g1y14_wgrad)
 g1y14_pearson <- (g1y14_woof - g1y14_woof_xi)/sqrt(g1y14_winfo)
-pdf(file="Results/PhenFigures/G1Y14_Pearson_Residuals.pdf", height=6, width=6)
+pdf(file="Results/Figures/G1Y14_Pearson_Residuals.pdf", height=6, width=6)
 plot(
     g1y14_pearson~g1y14_woof_xi,
     xlab="Fitted Values",
@@ -170,7 +170,7 @@ plot(
     main="G1Y14 Residuals")
 abline(h=0, lty=2, lwd=2)
 dev.off()
-pdf(file="Results/PhenFigures/G1Y14_Pearson_Residuals_Hist.pdf", height=6, width=6)
+pdf(file="Results/Figures/G1Y14_Pearson_Residuals_Hist.pdf", height=6, width=6)
 hist(g1y14_pearson,
     xlab="Pearson Residuals",
     main="G1Y14 Residuals",
@@ -242,7 +242,7 @@ for(i in 1:g2y14_nwoof) {
 }
 all.equal(g2y14_woof_xi, g2y14_wgrad)
 g2y14_pearson <- (g2y14_woof - g2y14_woof_xi)/sqrt(g2y14_winfo)
-pdf(file="Results/PhenFigures/G2Y14_Pearson_Residuals.pdf", height=6, width=6)
+pdf(file="Results/Figures/G2Y14_Pearson_Residuals.pdf", height=6, width=6)
 plot(
     g2y14_pearson~g2y14_woof_xi,
     xlab="Fitted Values",
@@ -250,7 +250,7 @@ plot(
     main="G2Y14 Residuals")
 abline(h=0, lty=2, lwd=2)
 dev.off()
-pdf(file="Results/PhenFigures/G2Y14_Pearson_Residuals_Hist.pdf", height=6, width=6)
+pdf(file="Results/Figures/G2Y14_Pearson_Residuals_Hist.pdf", height=6, width=6)
 hist(g2y14_pearson,
     xlab="Pearson Residuals",
     main="G2Y14 Residuals",

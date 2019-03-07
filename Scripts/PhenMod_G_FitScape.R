@@ -12,13 +12,13 @@ library(fields)
 library(graphics)
 
 # Set the working directory to be the root of the GitHub repo
-setwd("/Users/tomkono/Dropbox/GitHub/Hoshonti_Aiona")
-# setwd("/Users/ambereule-nashoba/Desktop/Dropbox/GitHubRepositories/Hoshonti_Aiona")
+setwd("/Users/tomkono/Dropbox/GitHub/Nashoba_Kono_Phenology")
+# setwd("/Users/ambereule-nashoba/Desktop/Dropbox/GitHubRepositories/Nashoba_Kono_Phenology")
 
 load(file="Results/RDA/PhenMod_G.rda")
 
 # Make the G1Y13 landscape
-pdf(file="Results/PhenFigures/G1Y13_FitnessLandscape_PhenMod_G.pdf", height=4, width=4)
+pdf(file="Results/Figures/G1Y13_FitnessLandscape_PhenMod_G.pdf", height=4, width=4)
 par(mar=c(4, 4, 0.1, 0.1), mgp=c(2.5, 1, 0))
  # (4) Create a grid
 plotlimits <- c(125, 190, 190, 250)
@@ -111,7 +111,7 @@ dev.off()
 
 
 # Make the G1Y14 landscape
-pdf(file="Results/PhenFigures/G1Y14_FitnessLandscape_PhenMod_G.pdf", height=4, width=4)
+pdf(file="Results/Figures/G1Y14_FitnessLandscape_PhenMod_G.pdf", height=4, width=4)
 par(mar=c(4, 4, 0.1, 0.1), mgp=c(2.5, 1, 0))
  # (4) Create a grid
 plotlimits <- c(125, 190, 190, 250)
@@ -189,7 +189,7 @@ dev.off()
 
 
 # Make the G2Y14 landscape
-pdf(file="Results/PhenFigures/G2Y14_FitnessLandscape_PhenMod_G.pdf", height=4, width=4)
+pdf(file="Results/Figures/G2Y14_FitnessLandscape_PhenMod_G.pdf", height=4, width=4)
 par(mar=c(4, 4, 0.1, 0.1), mgp=c(2.5, 1, 0))
  # (4) Create a grid
 plotlimits <- c(125, 190, 190, 250)

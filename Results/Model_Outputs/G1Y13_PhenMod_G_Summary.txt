@@ -6,17 +6,17 @@ aster.formula(formula = resp ~ varb + fit:(as.factor(Block) +
 
                        Estimate Std. Error z value Pr(>|z|)    
 (Intercept)           -0.546953   0.081735  -6.692 2.20e-11 ***
-varbNumPods            2.776449   0.084787  32.746  < 2e-16 ***
-varbNumSeeds           4.314960   0.415346  10.389  < 2e-16 ***
-varbPods              -6.165491   0.211435 -29.160  < 2e-16 ***
-fit:as.factor(Block)1  0.035068   0.029486   1.189  0.23431    
-fit:as.factor(Block)2 -0.046238   0.032737  -1.412  0.15783    
-fit:as.factor(Block)3 -0.107197   0.037549  -2.855  0.00431 ** 
-fit:as.factor(Block)4 -0.054472   0.038232  -1.425  0.15423    
-fit:as.factor(Block)5  0.106953   0.031480   3.397  0.00068 ***
-fit:as.factor(Block)6  0.156899   0.032248   4.865 1.14e-06 ***
-fit:EarliestGerm      -0.006626   0.002748  -2.411  0.01589 *  
-fit:EarliestFlowPod   -0.014417   0.001301 -11.080  < 2e-16 ***
+varbNumPods            2.775064   0.084789  32.729  < 2e-16 ***
+varbNumSeeds           4.294427   0.414548  10.359  < 2e-16 ***
+varbPods              -6.169782   0.211428 -29.181  < 2e-16 ***
+fit:as.factor(Block)1  0.034748   0.029438   1.180 0.237848    
+fit:as.factor(Block)2 -0.044364   0.032625  -1.360 0.173890    
+fit:as.factor(Block)3 -0.107305   0.037496  -2.862 0.004213 ** 
+fit:as.factor(Block)4 -0.054336   0.038174  -1.423 0.154628    
+fit:as.factor(Block)5  0.106459   0.031427   3.388 0.000705 ***
+fit:as.factor(Block)6  0.156387   0.032194   4.858 1.19e-06 ***
+fit:EarliestGerm      -0.006703   0.002747  -2.440 0.014702 *  
+fit:EarliestFlowPod   -0.014261   0.001294 -11.020  < 2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
